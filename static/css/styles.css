@@ -1,0 +1,16 @@
+* {
+    background-color: #5CDB95;
+}
+
+h1 {
+    font-size: 10em;
+}
+
+#rolled-dice{
+    color: #05386B;
+    font-size: 2em;
+}
+
+#rolled-dice > p{
+    margin-left: 50px;
+}
