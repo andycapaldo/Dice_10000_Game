@@ -4,6 +4,7 @@
 
 h1 {
     font-size: 10em;
+    color: #EDF5E1;
 }
 
 #rolled-dice{
@@ -13,4 +14,8 @@ h1 {
 
 #rolled-dice > p{
     margin-left: 50px;
+}
+
+h2 {
+    color: #EDF5E1;
 }
