@@ -19,3 +19,25 @@ h1 {
 h2 {
     color: #EDF5E1;
 }
+
+.modalcustom {
+    max-width: 50ch;
+    background-color: #05386B;
+    color: rgba(56,149,131,255);
+& > * {
+    margin: 0 0 0.5rem 0;
+    }
+}
+
+.modalcustom::backdrop {
+    background: rgb(0 0 0 / 0.4);
+}
+
+#victory, #victorymsg {
+    background-color: #05386B;
+    color: rgba(56,149,131,255);
+}
+
+#val {
+    background-color: #05386B;
+}

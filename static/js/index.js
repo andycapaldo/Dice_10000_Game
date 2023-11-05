@@ -1,4 +1,6 @@
 pageLoader();
+const modal = document.querySelector('#modal');
+const openModal = document.querySelector(".open-button");
 
 function pageLoader(){
     console.log('Loading the page...')
@@ -7,6 +9,10 @@ function pageLoader(){
     for (let btn of gameButtons){
         btn.addEventListener('click', rollDice)
     }
+    const closeModal = document.querySelector(".close-button");
+    closeModal.addEventListener("click", () => {
+    modal.close();
+});
 }
 
 
@@ -32,7 +38,8 @@ function displayDice(){
     let rolledDice = document.getElementById('rolled-dice');
     let roundScore = document.getElementById('round-score');
     let totalScore = document.getElementById('total-score');
-    let rollCount = document.getElementById('roll-number')
+    let rollCount = document.getElementById('roll-number');
+    let victoryRolls = document.getElementById('val');
     let diceValues = [];
 
     let roundTotal = 0;
@@ -43,7 +50,7 @@ function displayDice(){
         let randomNumber = getRandomNumber();
         diceValues.push(randomNumber);
 
-        die.textContent = 'Roll ' + (i + 1) + ': ' + randomNumber;
+        die.textContent = randomNumber;
         die.classList.add('rolled-die');
         rolledDice.appendChild(die);
     }
@@ -54,13 +61,18 @@ function displayDice(){
     rollCount.textContent = parseInt(rollCount.textContent) + 1;
     
     if (parseInt(totalScore.textContent) >= 10000){
-        console.log('You win!!!');
+        victoryRolls.textContent = rollCount.textContent;
+        modal.showModal();
     }
 }
 
 
 // Function to clear and reset the game
 function clearGame(){
+    let rolledDice = document.getElementById('rolled-dice');
+    let roundScore = document.getElementById('round-score');
+    let totalScore = document.getElementById('total-score');
+    let rollCount = document.getElementById('roll-number')
     return;
 }
 
@@ -116,3 +128,4 @@ function calculateTripleScore(tripleValue){
         return 0;
     }
 }
+
