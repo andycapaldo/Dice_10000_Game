@@ -11,7 +11,8 @@ function pageLoader(){
     }
     const closeModal = document.querySelector(".close-button");
     closeModal.addEventListener("click", () => {
-    modal.close();
+    modal.close()
+    clearGame();
 });
 }
 
@@ -21,6 +22,8 @@ function rollDice(e){
     console.log(e.target.value);
     if (e.target.value === 'Roll'){
         displayDice();
+    } else {
+        clearGame();
     }
 }
 
@@ -73,6 +76,10 @@ function clearGame(){
     let roundScore = document.getElementById('round-score');
     let totalScore = document.getElementById('total-score');
     let rollCount = document.getElementById('roll-number')
+    rolledDice.textContent = '';
+    roundScore.textContent = 0;
+    totalScore.textContent = 0;
+    rollCount.textContent = 0;
     return;
 }
 
